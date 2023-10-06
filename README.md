@@ -3,7 +3,7 @@ README EM CONSTRUÇÃO
 ```
 Claro, aqui está um exemplo de um arquivo README para um projeto React com as últimas versões disponíveis:
 
-```markdown
+
 # Nome do Projeto
 
 ## Descrição
