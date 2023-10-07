@@ -1,4 +1,4 @@
-import Home from "./pages/home/Home";
+import Home from "./app/pages/home/Home";
 
 const exact = true;
 
