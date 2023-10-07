@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_KEY = import.meta.env.REACT_APP_LABTECH_API;
+const API_KEY = import.meta.env.VITE_REACT_APP_API_KEY;
 
 const configHttp = {
   baseURL: API_KEY,
