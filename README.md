@@ -55,9 +55,6 @@ Nome do Autor
 * Github: [@seu_usuario](https://github.com/seu_usuario)
 * LinkedIn: [@seu_usuario](https://linkedin.com/in/seu_usuario)
 
-## 📝 Licença
-
-Este projeto está sob a licença [MIT](./LICENSE).
 
 Feito com ❤️ por Nome do Autor 👋🏽 Entre em contato!
 ```
