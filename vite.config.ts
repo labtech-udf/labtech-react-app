@@ -14,6 +14,13 @@ export default defineConfig({
   },
   build: {
     outDir: 'dist',
-    assetsDir: 'assets', 
+    assetsDir: 'assets',
+  },
+  resolve: {
+    alias: {
+      '@app': '/src/app',
+      '@assets': '/src/assets',
+      '@api': '/src/apis',
+    },
   },
 });
