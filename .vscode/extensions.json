@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "yigitfindikli.primeflexsnippets",
+    "dsznajder.es7-react-js-snippets",
+    "rodrigovallades.es7-react-js-snippets",
+    "esbenp.prettier-vscode",
+    "loiane.frontend-extension-pack",
+    "atommaterial.a-file-icon-vscode"
+  ]
+}
