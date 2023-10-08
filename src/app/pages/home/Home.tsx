@@ -1,5 +1,7 @@
+import React from 'react';
 import "./home.css";
 import patoGif from "@assets/img/pato.gif";
+
 
 export default function Home() {
   return (
