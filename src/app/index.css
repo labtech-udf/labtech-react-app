@@ -4,5 +4,6 @@
     border: 0;
     text-decoration: none;
     background-color: var(--surface-ground);
+    font-family: var(--font-family);
     /* outline: 1px solid red; */
 }

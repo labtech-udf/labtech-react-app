@@ -30,8 +30,10 @@ As seguintes ferramentas foram usadas na construção do projeto:
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![VSCode](https://img.shields.io/badge/Visual_Studio-0078d7?style=for-the-badge&logo=visual%20studio&logoColor=white)
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+![EsLint](https://img.shields.io/badge/eslint-3A33D1?style=for-the-badge&logo=eslint&logoColor=white)
+![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
 
-### ● [REACT](https://reactjs.org/) ● [NODE.JS](https://nodejs.org/pt-br) ● [NPM](https://www.npmjs.com/) ● [VITE](https://vitejs.dev/) ●  [PRIMEREACT](https://primereact.org/) ●  [PRIMEFLEX](https://primeflex.org/)
+### ● [REACT](https://reactjs.org/) ● [NODE.JS](https://nodejs.org/pt-br) ● [NPM](https://www.npmjs.com/) ● [VITE](https://vitejs.dev/) ●  [PRIMEREACT](https://primereact.org/) ●  [PRIMEFLEX](https://primeflex.org/) ●  [ESLINT](https://eslint.org/)
 
 ## 🎲 Rodando a aplicação
 

@@ -21,6 +21,7 @@ export default defineConfig({
       '@app': '/src/app',
       '@assets': '/src/assets',
       '@api': '/src/apis',
+      '@theme': '/src/assets/themes'
     },
   },
 });
