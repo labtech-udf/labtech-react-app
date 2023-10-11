@@ -3,6 +3,10 @@
 ## Descrição
 
 Um sistema de gerenciamento de  eventos 
+<div align=center>
+  
+  ![Alt](https://repobeats.axiom.co/api/embed/2ed1bb6afea490cc70dc8972d298059ee1f2b659.svg "Repobeats analytics image")
+</div>
 
 ## Pré-requisitos
 
