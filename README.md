@@ -52,7 +52,7 @@ $ cd nome-do-projeto
 $ npm install
 
 # Execute a aplicação em modo de desenvolvimento
-$ npm run dev
+$ npm start
 
 # O servidor iniciará na porta:3000 - acesse <http://localhost:3000>
 ```
