@@ -1,10 +1,10 @@
 {
   "name": "labtech",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1 - Alpha",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "start": "vite",
     "build": "tsc && vite build",
     "lint": "eslint src/**/*.{js,ts,tsx} --fix",
     "preview": "vite preview"
