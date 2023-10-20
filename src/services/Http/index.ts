@@ -1,15 +1,15 @@
 import axios from "axios";
 
-const API_KEY = import.meta.env.VITE_REACT_APP_API_KEY;
+const baseURL = import.meta.env.VITE_LABTECH_API_BASEURL;
 
 const configHttp = {
-  baseURL: API_KEY,
+  baseURL,
   headers: {
     "Access-Control-Allow-Origin": "*",
     "Content-Type": "application/json",
   },
 };
 
-const client = axios.create(configHttp);
+export const HttpService = axios.create(configHttp);
 
-export default client;
+
