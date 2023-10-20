@@ -6,6 +6,13 @@
     "rodrigovallades.es7-react-js-snippets",
     "esbenp.prettier-vscode",
     "loiane.frontend-extension-pack",
-    "atommaterial.a-file-icon-vscode"
+    "atommaterial.a-file-icon-vscode",
+    "naumovs.color-highlight",
+    "formulahendry.auto-close-tag",
+    "formulahendry.auto-rename-tag",
+    "steoates.autoimport",
+    "ms-azuretools.vscode-docker",
+    "eamodio.gitlens",
+    "xyz.local-history"
   ]
 }
