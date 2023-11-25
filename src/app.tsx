@@ -4,7 +4,9 @@ import { PrimeReactProvider } from "primereact/api";
 import { AuthProvider } from "@contexts/AuthContext";
 import { Router } from "@router/index";
 
-export default function App() {
+import "./styles/global.css";
+
+export function App() {
   return (
     <PrimeReactProvider>
       <AuthProvider>

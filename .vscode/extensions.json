@@ -13,6 +13,6 @@
     "steoates.autoimport",
     "ms-azuretools.vscode-docker",
     "eamodio.gitlens",
-    "xyz.local-history"
+    "bradlc.vscode-tailwindcss",
   ]
 }

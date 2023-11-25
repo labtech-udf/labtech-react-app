@@ -4,8 +4,8 @@ import { httpClient } from "@services/HttpClient";
 import { AxiosResponse } from "axios";
 
 type AuthContextProps = {
-  login: (signInDTO: SignInDTO) => void;
-  logout: () => void;
+  authenticate: (signInDTO: SignInDTO) => void;
+  signOut: () => void;
   token: string;
   isAuthenticated: boolean;
 };
@@ -29,7 +29,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [token, setToken] = useState("");
 
-  async function login({ Email, Senha }: SignInDTO) {
+  async function authenticate({ Email, Senha }: SignInDTO) {
     try {
       const { data }: AxiosResponse<SignInResponse> = await httpClient.post(
         "auth/signin",
@@ -48,12 +48,14 @@ export function AuthProvider({ children }: AuthProviderProps) {
     }
   }
 
-  function logout() {
+  function signOut() {
     setToken("");
     setIsAuthenticated(false);
   }
   return (
-    <authContext.Provider value={{ login, logout, token, isAuthenticated }}>
+    <authContext.Provider
+      value={{ authenticate, signOut, token, isAuthenticated }}
+    >
       {children}
     </authContext.Provider>
   );
