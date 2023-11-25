@@ -8,6 +8,7 @@ import { ExemploComponente } from "@components/ExemploComponente";
 // Usando PrimeReact
 import { Button } from 'primereact/button';
 import { useTheme } from "@hooks/useTheme";
+import { Link } from "react-router-dom";
 
 
 export function Home() {
@@ -44,7 +45,7 @@ export function Home() {
       <ExemploComponente />
       <button onClick={() => exemploCarregaEventos()}>Teste Requisição get na rota /evento</button>
       <button onClick={exemploCriaEventos}>Teste Requiscao post na rota /evento</button>
-      <a href="/dashboard">Exemplo navegação entre rotas</a>
+      <Link to="/dashboard">Exemplo navegação entre rotas</Link>
 
       <Button onClick={testeTema}>Exemplo do Button do primereact (Ele muda o tema)</Button>
 
