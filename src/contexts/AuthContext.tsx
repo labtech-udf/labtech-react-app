@@ -26,7 +26,7 @@ interface SignInResponse {
 export const authContext = createContext({} as AuthContextProps);
 
 export function AuthProvider({ children }: AuthProviderProps) {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(true);
   const [token, setToken] = useState("");
 
   async function authenticate({ Email, Senha }: SignInDTO) {
