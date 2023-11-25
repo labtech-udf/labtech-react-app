@@ -31,8 +31,14 @@
       "@pages/*":["./pages/*"],
       "@services/*":["./services/*"],
       "@styles/*":["./styles/*"],
-      "@utils/*":["./utils/*"]
-    }
+      "@utils/*":["./utils/*"],
+      "@router/*":["./router/*"],
+    },
+
+    // Types
+    "types": [
+      "node", "vite/client"
+    ]
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]

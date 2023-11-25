@@ -1,23 +1,23 @@
 import { EventoDTO } from "@interfaces/EventoDTO";
-import { HttpService } from "@services/Http";
+import { httpClient } from "@services/HttpClient";
 
 export class EventoService {
   static async create(params: EventoDTO) {
-    // Exemplo
-    HttpService.post("/evento", params)
+    return await httpClient.post("/evento", params)
   }
 
   static async get(): Promise<EventoDTO[]> {
-    return (await HttpService.get("/evento")).data
+    const { data } = await httpClient.get("/evento")
+    return data
   }
 
   static async update() {
     // Exemplo
-    // HttpService.put("/api/evento/:id", {})
+    // httpClient.put("/api/evento/:id", {})
   }
 
   static async delete() {
     // Exemplo
-    // HttpService.delete("/api/evento/:id", {})
+    // httpClient.delete("/api/evento/:id", {})
   }
 }

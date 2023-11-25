@@ -1,9 +1,9 @@
 import React from "react";
 
-export function Home() {
+export function Cadastro() {
   return (
     <>
-      <h1>Tela HOME</h1>
+      <h1>Tela de Cadastro</h1>
     </>
   );
 }

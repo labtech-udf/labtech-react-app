@@ -1,12 +1,15 @@
-import React from 'react';
-import { RouterProvider } from 'react-router-dom';
-import { PrimeReactProvider } from 'primereact/api';
-import { routes } from './routes';
+import React from "react";
+import { PrimeReactProvider } from "primereact/api";
+
+import { AuthProvider } from "@contexts/AuthContext";
+import { Router } from "@router/index";
 
 export default function App() {
   return (
     <PrimeReactProvider>
-      <RouterProvider router={routes} />
+      <AuthProvider>
+        <Router />
+      </AuthProvider>
     </PrimeReactProvider>
-  )
+  );
 }

@@ -4,10 +4,3 @@
   box-sizing: border-box;
   font-family: var(--font-family), sans-serif;
 }
-
-/* Remover */
-#root {
-  display: grid;
-  place-content: center;
-  text-align: center;
-}
