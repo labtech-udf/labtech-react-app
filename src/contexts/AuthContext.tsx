@@ -3,6 +3,11 @@ import { httpClient } from "@services/HttpClient";
 
 import { AxiosResponse } from "axios";
 
+interface SignInDTO {
+  Email: string;
+  Senha: string;
+}
+
 type AuthContextProps = {
   authenticate: (signInDTO: SignInDTO) => void;
   signOut: () => void;
@@ -13,11 +18,6 @@ type AuthContextProps = {
 type AuthProviderProps = {
   children: ReactNode;
 };
-
-interface SignInDTO {
-  Email: string;
-  Senha: string;
-}
 
 interface SignInResponse {
   accessToken: string;
@@ -30,6 +30,9 @@ export function AuthProvider({ children }: AuthProviderProps) {
   const [token, setToken] = useState("");
 
   async function authenticate({ Email, Senha }: SignInDTO) {
+    setIsAuthenticated(true); // Remover
+
+    //  modificar o que for necessário quando o endpoint de autenticação estiver funcionando
     try {
       const { data }: AxiosResponse<SignInResponse> = await httpClient.post(
         "auth/signin",
