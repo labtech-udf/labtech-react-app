@@ -25,24 +25,32 @@ export function HomeCarrosel() {
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const productTemplate = (item: any) => {
-    return (
-      <div
-        style={{
-          backgroundImage: `url(http://localhost:8180/arquivo/${item.photo.id}/download)`,
-          height: "20rem",
-          width: "100%",
-          borderRadius: "20px",
-          objectFit: "cover",
-        }}
-        className="flex items-center p-4"
-      >
-        <h1 className="text-3xl text-white uppercase">{item.name}</h1>
-      </div>
-    );
+    // Verifica se item.photo?.id existe antes de renderizar o componente
+    if (item.photo?.id) {
+      return (
+        <div
+          style={{
+            backgroundImage: `url(http://localhost:8180/arquivo/${item.photo?.id}/download)`,
+            height: "40vh",
+            borderRadius: "20px",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+          }}
+          className="flex w-full items-center p-4"
+        >
+          <h1 className="text-3xl text-white uppercase">{item.name}</h1>
+        </div>
+      );
+    } else {
+      // Se item.photo?.id não existir, retorna null ou um marcador de placeholder
+      return null;
+    }
   };
 
   useEffect(() => {
     EventoService.get().then((res) => {
+      console.log(res);
       setEventos(res);
     });
   }, []);

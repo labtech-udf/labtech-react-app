@@ -9,7 +9,7 @@ export function Home() {
     <section className="w-full h-screen flex flex-col justify-between">
       <Header />
       <div className="h-full">
-        <div className="px-16 pt-8 w-full h-96">
+        <div className="sm:px-8  md:px-16 pt-8 w-full h-96">
           <HomeCarrosel />
         </div>
         <HomeFiltros />

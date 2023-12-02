@@ -4,14 +4,7 @@ import { Link } from "react-router-dom";
 
 export function HeaderDash() {
   return (
-    <div
-      className="w-auto flex flex-col gap-1 p-2"
-      style={{
-        backgroundColor: "var(--primary-color)",
-        color: "var(--primary-color-text)",
-        borderRadius: "var(--border-radius)",
-      }}
-    >
+    <div className="w-auto flex flex-col gap-1 p-2 shadow-md rounded-2xl">
       <section className="flex gap-1 items-center">
         <Avatar
           icon="pi pi-user"
