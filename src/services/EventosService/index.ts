@@ -2,13 +2,21 @@ import { EventoDTO } from "@interfaces/EventoDTO";
 import { httpClient } from "@services/HttpClient";
 
 export class EventoService {
-  static async create(params: EventoDTO) {
-    return await httpClient.post("/evento", params)
+  static async createEvento(evento: EventoDTO, photo: File) {
+    const formData = new FormData();
+    formData.append("file", photo);
+    formData.append("evento", JSON.stringify(evento));
+    return await httpClient({
+      method: "post",
+      url: "evento",
+      data: formData,
+      headers: { "Content-Type": "multipart/form-data" },
+    });
   }
 
   static async get(): Promise<EventoDTO[]> {
-    const { data } = await httpClient.get("/evento")
-    return data
+    const { data } = await httpClient.get("/evento");
+    return data;
   }
 
   static async update() {

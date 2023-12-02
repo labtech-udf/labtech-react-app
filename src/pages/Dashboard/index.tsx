@@ -1,10 +1,11 @@
-import { HeaderDash } from '@components/Dashboard';
-import React from 'react';
-import { Outlet, Route, Routes } from 'react-router-dom';
+import { HeaderDash } from "@components/Dashboard";
+import React from "react";
+import { useParams } from "react-router-dom";
 
-import { Evento } from './evento';
+import { Evento } from "./evento";
 
 export function DashBoard() {
+  const { selectedPage } = useParams();
   return (
     <section
       className="w-full h-screen flex items-center"
@@ -18,15 +19,11 @@ export function DashBoard() {
           className="w-full flex flex-col gap-1 p-2"
           style={{
             backgroundColor: "var(--primary-color)",
-            color: "var(--primary-color-text)",
+            // color: "var(--primary-color-text)",
             borderRadius: "var(--border-radius)",
           }}
         >
-          <Routes>
-            <Route path="evento" element={<Evento />} />
-            {/* Adicione mais rotas aqui conforme necessário */}
-          </Routes>
-          <Outlet />
+          {selectedPage === "evento" && <Evento />}
         </section>
       </section>
     </section>

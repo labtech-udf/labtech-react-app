@@ -25,7 +25,8 @@ export function Router() {
           </Route>
         </Route>
         <Route>
-          <Route path="/admin/*" element={<DashBoard/>} ></Route>
+          <Route path="/admin/:selectedPage" element={<DashBoard/>} ></Route>
+          <Route path="/admin/" element={<DashBoard/>} ></Route>
         </Route>
       </Routes>
     </BrowserRouter>

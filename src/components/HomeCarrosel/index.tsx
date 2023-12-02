@@ -1,5 +1,6 @@
+import { EventoService } from "@services/EventosService";
 import { Carousel } from "primereact/carousel";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const responsiveOptions = [
   {
@@ -19,29 +20,36 @@ const responsiveOptions = [
   },
 ];
 
-const items = [
-  { Id: 0, Nome: "teste-0" },
-  { Id: 1, Nome: "teste-1" },
-  { Id: 2, Nome: "teste-2" },
-  { Id: 3, Nome: "teste-3" },
-  { Id: 4, Nome: "teste-4" },
-  { Id: 5, Nome: "teste-5" },
-];
-
 export function HomeCarrosel() {
+  const [eventos, setEventos] = useState([]);
+
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const productTemplate = (item: any) => {
     return (
-      <div className="bg-indigo-400 w-full h-3/4">
-        <h1>{item.Nome}</h1>
+      <div
+        style={{
+          backgroundImage: `url(http://localhost:8180/arquivo/${item.photo.id}/download)`,
+          height: "20rem",
+          width: "100%",
+          borderRadius: "20px",
+          objectFit: "cover",
+        }}
+        className="flex items-center p-4"
+      >
+        <h1 className="text-3xl text-white uppercase">{item.name}</h1>
       </div>
     );
   };
 
+  useEffect(() => {
+    EventoService.get().then((res) => {
+      setEventos(res);
+    });
+  }, []);
+
   return (
     <Carousel
-      className="bg-indigo-400 w-full h-full flex items-center justify-center rounded-3xl"
-      value={items}
+      value={eventos}
       numVisible={1}
       numScroll={1}
       responsiveOptions={responsiveOptions}
