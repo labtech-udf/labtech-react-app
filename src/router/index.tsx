@@ -1,14 +1,11 @@
-import React, { BrowserRouter, Route, Routes } from "react-router-dom";
-import { AuthGuard } from "@router/AuthGuard";
+import { Cadastro } from '@pages/Auth/Cadastro';
+import { Login } from '@pages/Auth/Login';
+import { DashBoard } from '@pages/Dashboard';
+import { Home } from '@pages/Home';
+import React, { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 // Public Pages
-import { Login } from "@pages/Auth/Login";
-import { Cadastro } from "@pages/Auth/Cadastro";
-
 // Private Pages
-import { Home } from "@pages/Home";
-import { DashBoard } from "@pages/Dashboard";
-
 export function Router() {
   return (
     <BrowserRouter>
