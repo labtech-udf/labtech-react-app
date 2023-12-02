@@ -44,8 +44,9 @@ export function LoginForm() {
 
   const onSubmit: SubmitHandler<LoginFields> = async (data) => {
     console.log(data);
-    authenticate(data);
-    reset(defaultValues);
+    // authenticate(data);
+    // reset(defaultValues);
+    return <Link to="/admin" />;
   };
 
   return (
@@ -111,18 +112,15 @@ export function LoginForm() {
           </button>
         </div>
 
-        <button
-          className="mt-8 bg-blue-500 w-32 rounded-2xl px-2 py-3 font-bold text-xs shadow-md text-white"
-          type="submit"
-        >
-          Entrar
+        <button className="mt-8 bg-blue-500 w-32 rounded-2xl px-2 py-3 font-bold text-xs shadow-md text-white">
+          <Link to="/admin">Entrar</Link>
         </button>
       </div>
 
       <div className="mt-5">
         <span>
           Não tem conta?{" "}
-          <Link to="/cadastro" className="text-blue-600 underline">
+          <Link to="/login" className="text-blue-600 underline">
             Cadastre-se aqui
           </Link>
         </span>

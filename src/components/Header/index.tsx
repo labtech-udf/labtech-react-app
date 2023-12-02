@@ -1,5 +1,6 @@
 import React from "react";
 import spotIcon from "@assets/icons/spot-icon.svg";
+import { Link } from "react-router-dom";
 
 export function Header() {
   return (
@@ -16,7 +17,7 @@ export function Header() {
       <span className="text-neutral-800 font-bold text-3xl">Logo</span>
 
       <div className="flex items-center justify-center gap-14 text-neutral-600">
-        <span>Entrar</span>
+      <Link to="/login">Entrar</Link>
         <span>Onde vc está</span>
       </div>
     </header>

@@ -30,7 +30,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
   const [token, setToken] = useState("");
 
   async function authenticate({ Email, Senha }: SignInDTO) {
-    setIsAuthenticated(true); // Remover
+    // setIsAuthenticated(true); // Remover
 
     //  modificar o que for necessário quando o endpoint de autenticação estiver funcionando
     try {
