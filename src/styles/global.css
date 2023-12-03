@@ -8,3 +8,11 @@
   box-sizing: border-box;
   font-family: "Poppins", "Sora", sans-serif;
 }
+
+.surface-card {
+  background-color: var(--surface-card);
+}
+
+.surface-bg {
+  background-color: var(--surface-ground)
+}

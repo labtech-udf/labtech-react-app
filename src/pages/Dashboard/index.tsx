@@ -1,19 +1,24 @@
-import { HeaderDash } from "@components/Dashboard";
+import { EventoList } from "@components/EventoList";
+import { HeaderDash } from "@components/HeaderDash";
+import { SidebarDash } from "@components/SidebarDash";
 import React from "react";
 import { useParams } from "react-router-dom";
-
-import { Evento } from "./evento";
+import { HomeDash } from "./Home";
 
 export function DashBoard() {
   const { selectedPage } = useParams();
   return (
-    <section className="w-full h-screen flex items-center bg-slate-200">
-      <section className="w-full flex flex-row p-2 gap-2">
-        <section style={{ width: "15%" }}>
-          <HeaderDash />
+    <section className="w-full h-screen flex flex-col surface-bg">
+      <section className="w-full h-14 surface-card">
+        <HeaderDash />
+      </section>
+      <section className="flex flex-row h-full w-full p-8 gap-8">
+        <section className="w-72">
+          <SidebarDash />
         </section>
-        <section className="w-full flex flex-col gap-1 p-2 shadow-md rounded-2xl">
-          {selectedPage === "evento" && <Evento />}
+        <section className="w-full surface-card rounded-md">
+          {selectedPage === "eventos" && <EventoList />}
+          {selectedPage === "home" && <HomeDash />}
         </section>
       </section>
     </section>

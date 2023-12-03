@@ -2,7 +2,7 @@ import { Cadastro } from '@pages/Auth/Cadastro';
 import { Login } from '@pages/Auth/Login';
 import { DashBoard } from '@pages/Dashboard';
 import { Home } from '@pages/Home';
-import React, { BrowserRouter, Route, Routes } from 'react-router-dom';
+import React, { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 
 // Public Pages
 // Private Pages
@@ -26,7 +26,7 @@ export function Router() {
         </Route>
         <Route>
           <Route path="/admin/:selectedPage" element={<DashBoard/>} ></Route>
-          <Route path="/admin/" element={<DashBoard/>} ></Route>
+          <Route path="/admin" element={<Navigate to="/admin/home" />} />
         </Route>
       </Routes>
     </BrowserRouter>
