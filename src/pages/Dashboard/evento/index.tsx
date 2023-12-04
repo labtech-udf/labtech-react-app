@@ -1,26 +1,28 @@
 import React, { useState } from "react";
-import "./evento.css";
 import { InputText } from "primereact/inputtext";
+import { Calendar } from "primereact/calendar";
+
 import { EventoDTO } from "@interfaces/EventoDTO";
 import { EventoService } from "@services/EventosService";
-import { Calendar } from 'primereact/calendar';
+import "./evento.css";
 
 export function Evento() {
-
   const [imageUrl, setImageUrl] = useState("");
-  const [photo, setPhoto] = useState(null);
+  const [photo, setPhoto] = useState<File>({} as File);
   const [nome, setNome] = useState("");
   const [nomeCard, setNomeCard] = useState("");
   const [description, setDescription] = useState("");
-  const [dataHora, setDataHora] = useState("");
+  const [dataHora, setDataHora] = useState<Date>({} as Date);
   const [address, setAddress] = useState("");
   const [cor, setCor] = useState("");
 
-  const createPhoto = (e) => {
-    const file = e.target.files[0];
-    setPhoto(file);
-    const url = URL.createObjectURL(file);
-    setImageUrl(url);
+  const createPhoto = (e: { target: HTMLInputElement }) => {
+    const files = e.target.files;
+    if (files) {
+      const [file] = files;
+      setPhoto(file);
+      setImageUrl(URL.createObjectURL(file));
+    }
   };
 
   const onSUbmit = () => {
@@ -31,7 +33,7 @@ export function Evento() {
     evento.dateHora = new Date(dataHora);
     evento.description = description;
     EventoService.createEvento(evento, photo);
-  }
+  };
 
   return (
     <div>
@@ -73,7 +75,10 @@ export function Evento() {
           <Calendar
             id="dateHora"
             value={dataHora}
-            onChange={(e) => setDataHora(e.value)}
+            // Implementar react hook form para reduzir os re-renders
+            onChange={(e) => {
+              e.target.value ? setDataHora(e.target.value) : null;
+            }}
             showIcon
           />
         </section>

@@ -1,7 +1,7 @@
-import { HeaderDash } from "@components/Dashboard";
 import React from "react";
 import { useParams } from "react-router-dom";
 
+import { HeaderDash } from "@components/HeaderDash";
 import { Evento } from "./evento";
 
 export function DashBoard() {
