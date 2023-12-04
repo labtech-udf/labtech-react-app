@@ -176,7 +176,7 @@ export function EventoForm() {
             <section className="evento flex">
               <label
                 htmlFor="imageUrl"
-                className="flex gap-1 rounded-2xl py-1 px-2 items-center"
+                className="flex gap-1 rounded-2xl py-1 px-2 items-center cursor-pointer"
                 style={{ color: cor, border: `1px solid ${cor}` }}
               >
                 <i className="pi pi-upload"></i>Upload
