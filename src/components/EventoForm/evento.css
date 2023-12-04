@@ -1,51 +1,7 @@
-.eventoImage {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-.eventoImage img {
-  max-width: 10rem;
-  max-height: 10rem;
-  padding: 1rem 0;
-  border: 1px dashed rgba(0, 0, 0, 0.12);
-  object-fit: fill;
-}
-
-.eventoImage input[type="file"] {
+.evento input[type="file"] {
   display: none;
 }
 
-.eventoImage label {
-  color: #1976d2;
-  display: flex;
-  flex-direction: row;
-  font-size: 16px;
-  gap: 12px;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid #1976d2;
-  border-radius: 8px;
-  padding: 5px 12px;
-  cursor: pointer;
-}
-
-.formEvento {
-  display: flex;
-  flex-direction: column;
-  margin-top: 1rem;
-  gap: 1rem;
-}
-
-.formEvento .inputEvento {
-  display: flex;
-  gap: 1rem;
-  width: 100%;
-}
-
-.formEvento .inputEvento input {
-  width: 100%;
+.reset {
+  all: unset;
 }

@@ -1,11 +1,12 @@
 import { EventoDTO } from "@interfaces/EventoDTO";
 import { httpClient } from "@services/HttpClient";
+import { dateToISOString } from "@utils/index";
 
 export class EventoService {
   static async createEvento(evento: EventoDTO, photo: File) {
     const formData = new FormData();
     formData.append("file", photo);
-    formData.append("evento", JSON.stringify(evento));
+    formData.append("evento", JSON.stringify({ ...evento, dateHora: dateToISOString(evento.dateHora) }));
     return await httpClient({
       method: "post",
       url: "evento",
@@ -14,8 +15,9 @@ export class EventoService {
     });
   }
 
-  static async get(): Promise<EventoDTO[]> {
+  static async listEventos(): Promise<EventoDTO[]> {
     const { data } = await httpClient.get("/evento");
+    console.log(data)
     return data;
   }
 

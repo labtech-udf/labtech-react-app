@@ -1,3 +1,4 @@
+import { EventoDTO } from "@interfaces/EventoDTO";
 import { EventoService } from "@services/EventosService";
 import { Carousel } from "primereact/carousel";
 import React, { useEffect, useState } from "react";
@@ -21,7 +22,7 @@ const responsiveOptions = [
 ];
 
 export function HomeCarrosel() {
-  const [eventos, setEventos] = useState([]);
+  const [eventos, setEventos] = useState<EventoDTO[]>([]);
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const productTemplate = (item: any) => {
@@ -49,8 +50,7 @@ export function HomeCarrosel() {
   };
 
   useEffect(() => {
-    EventoService.get().then((res) => {
-      console.log(res);
+    EventoService.listEventos().then((res) => {
       setEventos(res);
     });
   }, []);

@@ -1,11 +1,16 @@
-import React, { useState } from "react";
+import React, { ReactNode, useState } from "react";
 import defaultUser from "@assets/default/user.jpg";
 import { Avatar } from "primereact/avatar";
 import { Tooltip } from "primereact/tooltip";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
-const TreeNode = ({ label, children }) => {
+interface TreeNodeProps {
+  label: string;
+  children: ReactNode;
+}
+
+const TreeNode: React.FC<TreeNodeProps> = ({ label, children }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleToggle = () => {
