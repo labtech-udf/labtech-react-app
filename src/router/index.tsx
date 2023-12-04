@@ -1,26 +1,32 @@
-import React, { BrowserRouter, Route, Routes } from "react-router-dom";
-import { AuthGuard } from "@router/AuthGuard";
+import { Cadastro } from '@pages/Auth/Cadastro';
+import { Login } from '@pages/Auth/Login';
+import { DashBoard } from '@pages/Dashboard';
+import { Home } from '@pages/Home';
+import React, { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 // Public Pages
-import { Login } from "@pages/Auth/Login";
-import { Cadastro } from "@pages/Auth/Cadastro";
-
 // Private Pages
-import { Home } from "@pages/Home";
-
 export function Router() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route element={<AuthGuard isPrivate={false} />}>
+        {/* disabled para uso local */}
+        {/* <Route element={<AuthGuard isPrivate={false} />}> */}
+        <Route>
           <Route path="/login" element={<Login />} />
           <Route path="/cadastro" element={<Cadastro />} />
         </Route>
 
-        <Route element={<AuthGuard isPrivate />}>
+        {/* disabled para uso local */}
+        {/* <Route element={<AuthGuard isPrivate />}> */}
+        <Route>
           <Route path="/" element={<Home />}>
             {/* Qualquer outra rota privada que esteja dentro de home */}
           </Route>
+        </Route>
+        <Route>
+          <Route path="/admin/:selectedPage" element={<DashBoard/>} ></Route>
+          <Route path="/admin/" element={<DashBoard/>} ></Route>
         </Route>
       </Routes>
     </BrowserRouter>
