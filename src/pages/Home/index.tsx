@@ -33,10 +33,10 @@ export function Home() {
   // const { isAuthenticated } = useAuth();
   const isAuthenticated = true;
   return (
-    <section className="w-full h-screen flex flex-col justify-between">
+    <section className="w-full flex flex-col justify-between">
       <Header />
-      <div className="h-full">
-        <div className="px-16 pt-8 w-full h-96">
+      <div className="h-full px-16">
+        <div className="pt-8 w-full h-96">
           <HomeCarrosel />
         </div>
         <HomeFiltros />
