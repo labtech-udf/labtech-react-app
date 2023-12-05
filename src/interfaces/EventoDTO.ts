@@ -1,3 +1,5 @@
+import { EventoCategoriasDTO } from "./EventoCategoriasDTO";
+
 export class EventoDTO {
   id?: number;
   name: string = "";
@@ -7,4 +9,6 @@ export class EventoDTO {
   dateHora: Date | null = null;
   address: string = "";
   cor: string = "";
+  status: string = "";
+  categorias: EventoCategoriasDTO[] = [];
 }

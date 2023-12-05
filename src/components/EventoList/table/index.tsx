@@ -1,8 +1,10 @@
 import { EventoDTO } from "@interfaces/EventoDTO";
 import { EventoService } from "@services/EventosService";
+import { Button } from "primereact/button";
 
 import { Column } from "primereact/column";
 import { DataTable } from "primereact/datatable";
+import { Tag } from "primereact/tag";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -17,7 +19,7 @@ export function EventosTable() {
   }, []);
 
   const header = (
-    <div className="flex py-2 flex-wrap items-center justify-between gap-2">
+    <div className="flex flex-wrap items-center justify-between gap-2">
       <span className="text-xl text-900 font-bold">Products</span>
       <Link to="/admin/evento-new">
         <button className="w-12 h-12 text-green-500  shadow-md rounded-full shadow-green-500/40 hover:shadow-green-500/75">
@@ -36,6 +38,45 @@ export function EventosTable() {
       />
     );
   };
+  const actionBodyTemplate = (rowData: EventoDTO) => {
+    return (
+      <React.Fragment>
+        <Button
+          icon="pi pi-pencil"
+          rounded
+          outlined
+          className="mr-2"
+          onClick={() => console.log("klasdkas", rowData) }
+        />
+        <Button
+          icon="pi pi-trash"
+          rounded
+          outlined
+          severity="danger"
+          onClick={() => console.log("klasdkas")}
+        />
+      </React.Fragment>
+    );
+  };
+  const statusBodyTemplate = (rowData: EventoDTO) => {
+    return <Tag value={rowData.status} severity={getSeverity(rowData)}></Tag>;
+};
+
+  const getSeverity = (e: EventoDTO) => {
+    switch (e.status) {
+        case 'C':
+            return 'warning';
+
+        case 'LOWSTOCK':
+            return 'warning';
+
+        case 'OUTOFSTOCK':
+            return 'danger';
+
+        default:
+          return 'danger';
+    }
+};
   return (
     <div>
       <DataTable
@@ -46,7 +87,13 @@ export function EventosTable() {
       >
         <Column field="name" header="Name"></Column>
         <Column header="Image" body={imageBodyTemplate}></Column>
-        <Column header="Image" body={imageBodyTemplate}></Column>
+        <Column header="Categoria" body={imageBodyTemplate}></Column>
+        <Column field="Status" header="Status" body={statusBodyTemplate} sortable style={{ minWidth: '12rem' }}></Column>
+        <Column
+          body={actionBodyTemplate}
+          exportable={false}
+          style={{ minWidth: "12rem" }}
+        ></Column>
       </DataTable>
     </div>
   );
