@@ -1,56 +1,62 @@
-// Exemplo
-import React, { useState } from "react"
-import { EventoService } from "@services/Eventos"
-import { EventoDTO } from "@interfaces/EventoDTO";
-import { ExemploComponente } from "@components/ExemploComponente";
+import React from "react";
+import { Header } from "@components/Header";
+import { HomeCarrosel } from "@components/HomeCarrosel";
+import { HomeFiltros } from "@components/HomeFiltros";
+import { HomeEventos } from "@components/HomeEventos";
+import { Footer } from "@components/Footer";
+// import { useAuth } from "@hooks/useAuth.ts";
 
-
-// Usando PrimeReact
-import { Button } from 'primereact/button';
-import { useTheme } from "@hooks/useTheme";
-import { Link } from "react-router-dom";
-
+const mockListEventos = [
+  {
+    id: 1,
+    nome: "Comic Con Experience",
+  },
+  {
+    id: 2,
+    nome: "Brasil Game Show",
+  },
+  {
+    id: 3,
+    nome: "Google Dev Fest",
+  },
+  {
+    id: 4,
+    nome: "JS Con",
+  },
+  {
+    id: 5,
+    nome: "Acabaram as ideias de evento",
+  },
+];
 
 export function Home() {
-  const [listaEventos, setListaEventos] = useState<EventoDTO[]>([{ id: 1, nome: 'exemplo' }])
-
-  const [theme, setTheme] = useState('dark');
-
-  const { changeTheme } = useTheme()
-
-  async function exemploCarregaEventos() {
-    const eventos = await EventoService.get();
-    setListaEventos(eventos)
-  }
-
-  async function exemploCriaEventos() {
-    const corpoRequisicao: EventoDTO = { nome: "BGS 2023" }
-    return await EventoService.create(corpoRequisicao)
-  }
-
-  function testeTema() {
-
-    if (changeTheme) {
-      const newTheme = theme === 'dark' ? 'light' : 'dark';
-      changeTheme(`${theme}`, `${newTheme}`, 'theme-link', () =>
-        setTheme(newTheme)
-      );
-    }
-
-  }
-
-
+  // const { isAuthenticated } = useAuth();
+  const isAuthenticated = true;
   return (
-    <section className="w-full p-2 gap-2 h-auto flex flex-column align-items-center">
-      <ExemploComponente />
-      <button onClick={() => exemploCarregaEventos()}>Teste Requisição get na rota /evento</button>
-      <button onClick={exemploCriaEventos}>Teste Requiscao post na rota /evento</button>
-      <Link to="/dashboard">Exemplo navegação entre rotas</Link>
+    <section className="w-full flex flex-col justify-between">
+      <Header />
+      <div className="h-full px-16">
+        <div className="pt-8 w-full h-96">
+          <HomeCarrosel />
+        </div>
+        <HomeFiltros />
+        <HomeEventos label="Novos eventos" eventos={mockListEventos} />
 
-      <Button onClick={testeTema}>Exemplo do Button do primereact (Ele muda o tema)</Button>
-
-
-      {listaEventos.map((evento) => (<li key={evento.id}>{evento.nome}</li>))}
+        {/* Parte que precisa estar autenticado para exibir os eventos específicos do usuário*/}
+        {isAuthenticated && (
+          <>
+            <HomeEventos
+              label="Vistos recentemente"
+              eventos={mockListEventos}
+            />
+            <HomeEventos
+              label="Baseado nos seus favoritos"
+              eventos={mockListEventos}
+            />
+          </>
+        )}
+      </div>
+      <Footer />
     </section>
-  )
+  );
 }
