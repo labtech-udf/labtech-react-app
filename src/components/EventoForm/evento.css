@@ -1,0 +1,7 @@
+.evento input[type="file"] {
+  display: none;
+}
+
+.reset {
+  all: unset;
+}

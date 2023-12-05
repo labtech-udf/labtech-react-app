@@ -1,6 +1,7 @@
 import React from "react";
 import { TreeSelect } from "primereact/treeselect";
 import spotIcon from "@assets/icons/spot-icon.svg";
+import { Link } from "react-router-dom";
 
 // Remover depois
 const selectOptionsMockData = [
@@ -31,9 +32,11 @@ export function Header() {
       <span className="text-neutral-800 font-bold text-3xl">Logo</span>
 
       <div className="flex items-center justify-center gap-14 text-neutral-600">
+        <Link to="/admin">
         <span className="cursor-pointer" onClick={openModalLogin}>
           Entrar
         </span>
+        </Link>
         <span className="cursor-pointer">Cadastre-se</span>
       </div>
     </header>
